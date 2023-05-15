@@ -1,0 +1,16 @@
+# 간선이 (a, b, c, d ... )이렇게 여러 개가 나타나는 경우
+# 각 노드의 부모 중 최소값을 최초 부모로 설정한다
+
+def union(ed):
+    min_parent = min(parent[e] for e in ed)
+
+    for e in ed:
+        parent[e] = min_parent
+
+
+# 부모 설정하기
+# 최소한 간선 개수 이상만큼 설정해야 한다
+
+for _ in range(len(edges)):
+    for ed in edges:
+        union(ed)

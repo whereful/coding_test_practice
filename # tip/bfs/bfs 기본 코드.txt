@@ -1,0 +1,58 @@
+'''
+해당 문제
+
+백준
+5427
+
+'''
+
+
+from collections import deque
+
+dy = [-1, 1, 0, 0]
+dx = [0, 0, -1, 1]
+
+
+def bfs(i, j):
+    q = deque()
+
+    # 삽입 후 방문 처리
+    q.append((i, j))
+    visited[i][j] = 1
+
+    # 문제 따라 코드 추가
+    ~~
+
+    # 큐가 빌 때까지
+    while q:
+        y, x = q.popleft()
+
+        # 문제 따라 종료 조건 명시
+
+        # 상하좌우 살핌
+        # 문제 따라 코드 다름
+        for k in range(4):
+            ny, nx = y + dy[k], x + dx[k]
+
+            # 범위 내이고 방문하지 않은 점
+            if 0 <= ny <= n - 1 and 0 <= nx <= m - 1 and \
+                    visited[ny][nx] == 0:
+
+                # 그래프의 상하좌우 값이 특정 값이면
+                if graph[ny][nx] == a:
+                    graph[y][x] = 0
+                    visited[ny][nx] = 1
+
+                # 그래프의 상하좌우 값이 다른 값이면
+                elif graph[ny][nx] == b:
+                    q.append((ny, nx))
+                    visited[ny][nx] = 1
+
+
+n, m = map(int, input().split())
+
+# 그래프 설정 및 방문 배열 설정
+# 2차원 배열이거나 1차원 배열
+graph = [list(map(int, input().split())) for _ in range(n)]
+visited = [[0] * m for _ in range(n)]
+

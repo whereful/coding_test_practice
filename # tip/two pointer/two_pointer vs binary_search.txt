@@ -1,0 +1,14 @@
+투 포인터
+- left, right만 다룸
+- left += 1, right -=1
+- 배열의 원소 2개를 선택
+- 배열의 모든 원소 순회
+- O(n)
+
+이분 탐색
+- left, right, mid[(left + right) // 2]를 다룸
+- left = mid + 1, right = mid - 1
+- mid를 통하여 배열의 원소 1개를 선택
+- 배열의 모든 원소 순회하지 않음
+- O(log   n)
+        2 

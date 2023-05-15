@@ -1,0 +1,23 @@
+'''
+해당 문제
+
+백준
+11559
+'''
+
+# 벽돌을 떨어뜨리는 알고리즘
+
+
+def fall():
+    # 전체 가로에 대해서 왼쪽부터 시작
+    for x in range(6):
+
+        # 마지막 앞칸부터 위로 올라감
+        for y in range(10, 0 - 1, -1):
+
+            # 마지막 칸부터 y전까지 범위 설정
+            for R_y in range(11, y+1 - 1, -1):
+
+                if graph[y][x] != '.' and graph[R_y][x] == '.':
+                    graph[R_y][x], graph[y][x] = graph[y][x], '.'
+                    break

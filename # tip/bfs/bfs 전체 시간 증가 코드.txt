@@ -1,0 +1,82 @@
+'''
+해당 문제
+
+baekjoon
+2573
+16234
+2636
+11559
+'''
+
+from collections import deque
+
+dy = [-1, 1, 0, 0]
+dx = [0, 0, -1, 1]
+
+
+
+def bfs(i, j):
+    q = deque()
+    q.append((i, j))
+    visited[i][j] = 1
+
+    while q:
+        y, x = q.popleft()
+
+        for k in range(4):
+            ny, nx = y + dy[k], x + dx[k]
+
+            # 범위 내이고 방문하지 않은 점
+            if 0 <= ny <= n - 1 and 0 <= nx <= m - 1 and \
+                    visited[ny][nx] == 0:
+
+                # 그래프의 상하좌우 값이 특정 값이면
+                if graph[ny][nx] == a:
+                    graph[y][x] = 0
+                    visited[ny][nx] = 1
+
+                # 그래프의 상하좌우 값이 다른 값이면
+                elif graph[ny][nx] == b:
+                    q.append((ny, nx))
+                    visited[ny][nx] = 1
+
+
+n, m = map(int, input().split())
+
+graph = [list(map(int, input().split())) for _ in range(n)]
+visited = [[0] * m for _ in range(n)]
+
+# 날짜 기본 값 설정
+day = 1
+
+# 0일 차 상태 저장 코드
+~~
+
+# 무한 반복
+while True:
+
+    # 순회할 때마다 초기화되는 변수 설정
+    flag = 0
+    visited = [[0] * m for _ in range(n)]
+
+    # 그래프 순회하면서 특정 점일 시 bfs 진행
+    # 문제 따라 시작점이 1개로 고정될 수도 있음
+
+    for i in range(n):
+        for j in range(m):
+            if graph[i][j] == a and visited[i][j] == 0:
+                # 문제 따라 bfs가 값을 return하기도 함
+                # return한 값에 따라 flag 변경되기도 함
+                bfs(i, j)
+
+    
+    # 종료 조건 만족
+    if (flag == 0):
+        print(day)
+
+        exit(0)
+
+    else:
+        # 순회할 때마다 결과가 달라지는 코드 설정
+        day += 1
+        

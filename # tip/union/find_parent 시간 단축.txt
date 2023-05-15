@@ -1,0 +1,10 @@
+find_parent 함수 시간 단축
+
+def find_parent(i):
+    if parent[i] == i:
+        return i
+
+    # 해당 구문 추가 필요    
+    parent[i] = find_parent(parent[i])
+    
+    return parent[i]

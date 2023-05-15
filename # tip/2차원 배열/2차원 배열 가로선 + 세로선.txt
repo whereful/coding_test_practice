@@ -1,0 +1,14 @@
+'''
+해당 문제
+
+백준
+2458
+
+'''
+
+# 2차원 배열 특정 점을 가로 지르는 가로선 + 세로선 값 구하기
+for i in range(1, n+1):
+    sum = 0
+    for j in range(1, n+1):
+        sum += floyd[i][j] + floyd[j][i]
+    

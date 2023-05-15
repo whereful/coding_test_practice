@@ -1,0 +1,75 @@
+'''
+해당 문제
+
+백준
+11967
+
+'''
+
+from collections import defaultdict, deque
+import sys
+def input(): return sys.stdin.readline().strip()
+
+
+dy = [-1, 1, 0, 0]
+dx = [0, 0, -1, 1]
+
+
+def bfs():
+    q = deque()
+
+    # 시작점을 큐에 넣고 방문처리함
+    q.append((0, 0))
+    visited[0][0] = 1
+
+    while q:
+        # 현재 점 살핌
+        y, x = q.popleft()
+
+        # 특별한 코드
+        # 현재 점에서 상하좌우 외에 다른 점을 살필 필요
+        for a, b in info[(y, x)]:
+            # 불이 0이다 = 방문을 아직 하지 않았다
+            if graph[a][b] == 0:
+                graph[a][b] = 1
+
+                # 현재 점에서 적용 결과 최소 한 점이 방문처리되었으면(= 그 점으로 갈 수 있는 경로가 있으면)
+                # 그 점을 삽입 및 방문 처리
+                for k in range(4):
+                    na = a + dy[k]
+                    nb = b + dx[k]
+
+                    if 0 <= na <= n - 1 and 0 <= nb <= n - 1 and \
+                            visited[na][nb] == 1:
+                        q.append((a, b))
+                        visited[a][b] = 1
+                        break
+
+        # 전형적 코드
+        # 방문하지 않았고 조건 만족 시 큐에 삽입 및 방문 처리
+        for k in range(4):
+            ny = y + dy[k]
+            nx = x + dx[k]
+
+            if 0 <= ny <= n - 1 and 0 <= nx <= n - 1 and \
+                    visited[ny][nx] == 0 and graph[ny][nx] == 1:
+                q.append((ny, nx))
+                visited[ny][nx] = 1
+
+
+n, m = map(int, input().split())
+info = defaultdict(list)
+
+graph = [[0] * n for _ in range(n)]
+graph[0][0] = 1
+
+visited = [[0] * n for _ in range(n)]
+
+# defaultdict를 통해 불을 키고 끌 수 있는 방의 묶음을 담아준다
+for _ in range(m):
+    y, x, a, b = map(int, input().split())
+    info[(y - 1, x - 1)].append((a - 1, b - 1))
+
+bfs()
+# graph의 1의 합을 계산하여 출력
+print(sum(sum(graph, [])))

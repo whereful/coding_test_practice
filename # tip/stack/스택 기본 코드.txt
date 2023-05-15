@@ -1,0 +1,12 @@
+
+# 스택에 넣은 다음에 처리
+for i in range(len(s)):
+
+    # 스택에 추가
+    stack.append(s[i])
+
+    # 스택의 끝 원소들이 pop 조건을 만족하면 
+    if ():
+        # pop해야 하는 개수만큼 pop
+        for _ in range():
+            stack.pop()

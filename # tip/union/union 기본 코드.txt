@@ -1,0 +1,29 @@
+
+
+def find_parent(i):
+    if parent[i] == i:
+        return parent[i]
+    parent[i] = find_parent(parent[i])
+    return parent[i]
+
+
+def union(a, b):
+    a = find_parent(a)
+    b = find_parent(b)
+
+    if a < b:
+        parent[b] = a
+    else:
+        parent[a] = b
+
+
+# 0부터 시작, 1부터 시작에 따라 n, n + 1로 나뉨
+parent = [i for i in range(n)]
+
+edges = []
+
+# 2번 조회하여 오류 없이 집합 설정하기
+for _ in range(2):
+    for a, b in edges:
+        if find_parent(a) != find_parent(b):
+            union(a, b)

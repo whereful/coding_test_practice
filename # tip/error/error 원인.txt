@@ -1,0 +1,2 @@
+attribute error
+- 원인 : 함수명 오타

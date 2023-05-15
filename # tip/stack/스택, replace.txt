@@ -1,0 +1,14 @@
+s = input()
+p = input()
+
+
+while True:
+    if p not in s:
+        print(s if s != '' else 'FRULA')
+        break
+
+    s = s.replace(p, '')
+
+위 코드는 스택과 동일한 결과를 반환한다
+다만 s가 매우 큰 경우 replace의 시간복잡도가 증가하여
+많은 시간이 소모된다.
