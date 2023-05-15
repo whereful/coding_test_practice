@@ -8,9 +8,6 @@
 
 '''
 
-'''
-# answer
-
 import heapq
 
 dy = [-1, 1, 0, 0]
@@ -55,4 +52,3 @@ graph = [list(map(int, input())) for _ in range(n)]
 visited = [[0] * m for _ in range(n)]
 
 print(bfs(0, 0))
-'''

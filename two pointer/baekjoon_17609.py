@@ -9,8 +9,6 @@
 
 '''
 
-'''
-# answer
 
 def isPalin_left(s):
 
@@ -59,4 +57,3 @@ def isPalin_right(s):
 for _ in range(int(input())):
     s = input()
     print(min(isPalin_left(s), isPalin_right(s)))
-'''

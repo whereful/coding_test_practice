@@ -4,8 +4,6 @@
 크루스칼 알고리즘
 '''
 
-'''
-# answer
 
 import sys
 def input(): return sys.stdin.readline().strip()
@@ -45,4 +43,3 @@ for c, a, b in edges:
         answer += c
 
 print(answer)
-'''

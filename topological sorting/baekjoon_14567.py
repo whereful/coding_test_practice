@@ -4,12 +4,11 @@
 
 '''
 
-'''
-# answer
-
 from collections import deque
 
 # bfs 방식
+
+
 def topological_sort():
     q = deque()
 
@@ -17,7 +16,6 @@ def topological_sort():
         if topology[i] == 0:
             q.append((1, i))
 
-    
     while q:
         dis, node = q.popleft()
 
@@ -50,4 +48,3 @@ answer = [0] * (n + 1)
 topological_sort()
 
 print(*answer[1:])
-'''

@@ -4,11 +4,10 @@
 
 '''
 
-'''
-# answer
 
 import sys
 def input(): return sys.stdin.readline().strip()
+
 
 sys.setrecursionlimit(10 ** 6)
 
@@ -50,4 +49,3 @@ for e in edges:
     answer += e[0]
 
 print(answer)
-'''

@@ -8,8 +8,6 @@
 마지막 줄에 주어진 점들이 모두 한 집합이면 YES
 '''
 
-'''
-# answer
 
 import sys
 def input(): return sys.stdin.readline().strip()
@@ -48,8 +46,8 @@ for i in range(n):
         if graph[i][j] == 1:
             edges.append((i, j))
 
-# 2번 조회하여 오류 없이 집합 설정하기
-for _ in range(2):
+# 최소한 간선 개수만큼 조회하여 오류 없이 집합 설정하기
+for _ in range(len(edges)):
     for a, b in edges:
         if find_parent(a) != find_parent(b):
             union(a, b)
@@ -59,4 +57,3 @@ if len(set(answer)) == 1:
     print('YES')
 else:
     print('NO')
-'''

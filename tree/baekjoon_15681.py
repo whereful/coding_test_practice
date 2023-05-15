@@ -3,9 +3,6 @@
 
 '''
 
-'''
-# answer
-
 from collections import deque
 import sys
 def input(): return sys.stdin.readline().strip()
@@ -84,4 +81,3 @@ node_count(r)
 
 for _ in range(q):
     print(answer[int(input())])
-'''

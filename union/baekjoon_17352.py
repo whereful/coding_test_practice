@@ -5,8 +5,6 @@
 
 '''
 
-'''
-# answer
 
 import sys
 def input(): return sys.stdin.readline().strip()
@@ -44,8 +42,8 @@ edges.sort(key=lambda x: (x[0], x[1]))
 
 print(edges)
 
-# 2번 적용하여 오류 없이 부모 관계 설정
-for _ in range(2):
+# 최소한 간선 개수만큼 적용하여 오류 없이 부모 관계 설정
+for _ in range(len(edges)):
     for e in edges:
         union(e[0], e[1])
 
@@ -54,4 +52,3 @@ for i in range(1, n - 1 + 1):
     if parent[i] != parent[i + 1]:
         print(parent[i], parent[i + 1])
         break
-'''
