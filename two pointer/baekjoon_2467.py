@@ -9,7 +9,6 @@
 
 def two_pointer():
 
-    # 이중포인터 설정
     left = 0
     right = n-1
 

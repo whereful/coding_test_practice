@@ -14,7 +14,7 @@ dx = [0, 0, -1, 1]
 def bfs():
     q = deque()
 
-    # 불 먼저 큐에 삽입 및 방문 처리
+    # 물 먼저 큐에 삽입 및 방문 처리
     for i in range(n):
         for j in range(m):
             if graph[i][j] == '*':

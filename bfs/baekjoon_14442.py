@@ -1,11 +1,15 @@
 '''
-해당 문제
+# comment
 
-백준
-14923
-2206
-14442
+# 벽을 k번만 부술 수 있다
 
+# 예시 따라 우선순위 변경(최소 거리 -> 최소 벽 부순 개수)
+
+# 2차원 배열에서는 우선순위가 고정되어야 함
+
+# https://what-am-i.tistory.com/m/151
+
+# 큐에 dis를 넣으면 시간초과 발생
 '''
 
 from collections import deque
