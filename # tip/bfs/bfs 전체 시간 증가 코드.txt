@@ -6,6 +6,7 @@ baekjoon
 16234
 2636
 11559
+16236
 '''
 
 from collections import deque
@@ -61,6 +62,7 @@ while True:
 
     # 그래프 순회하면서 특정 점일 시 bfs 진행
     # 문제 따라 시작점이 1개로 고정될 수도 있음
+    # 즉, 2중 for문 없이 bfs를 호출할 수 있음
 
     for i in range(n):
         for j in range(m):
