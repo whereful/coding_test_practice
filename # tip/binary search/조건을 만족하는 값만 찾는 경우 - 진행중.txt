@@ -1,0 +1,27 @@
+# li는 정렬되어 있다고 가정
+# 따라서 li의 구간도 정렬되어 있어 binary search 적용 가능
+
+# target 비교 외에 여러 경우 가능
+def binary_search(target, start, end):
+
+    while start <= end:
+        mid = (start + end) // 2
+
+        # 조건을 만족하지 않고 부족한 경우
+        # 최소 지점을 높임
+        if li[mid] < target:
+            start = mid + 1
+
+        # 조건을 만족하지 않고 과다한 경우
+        # 최대 지점을 낮춤
+        elif li[mid] > target:
+            end = mid - 1
+
+        # 조건을 만족했으면 더 이상 볼 필요가 없음   
+        else:
+            return mid
+
+    # 값이 없으면 None을 반환
+    return None
+            
+    
