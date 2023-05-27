@@ -7,3 +7,12 @@ binary search 특징
 
 1. 정렬되지 않은 배열에서 정렬된 배열을 추출 및 발견해야 한다
 (정렬되지 않은 배열 : arr, 추출한 배열 : li)
+
+2. bisect_left, bisect_right로 정의 가능
+# https://heytech.tistory.com/79
+
+bisect_left(배열, 값) = 값보다 같거나 이상이지만 가장 작은 값이 있는 인덱스
+
+bisect_right(배열, 값) = 값보다 같거나 이하이지만 가장 큰 값이 있는 인덱스 + 1
+
+bisect_right(배열, b) - bisect_left(배열, a) = a 이상 b 이하인 배열 원소 개수
