@@ -22,8 +22,13 @@ parent = [i for i in range(n)]
 
 edges = []
 
-# 2번 조회하여 오류 없이 집합 설정하기
-for _ in range(2):
-    for a, b in edges:
-        if find_parent(a) != find_parent(b):
-            union(a, b)
+
+for a, b in edges:
+    # 사이클이 발생하지 않으면
+    if find_parent(a) != find_parent(b):
+        # 각 간선에 대해서 집합을 합침
+        union(a, b)
+
+# 간선을 1번만 전체 순회하면 부모가 제대로 설정되지 않음
+for i in range(1, n +1):
+    find_parent(i)

@@ -30,6 +30,7 @@ n = int(input())
 
 parent = [i for i in range(n + 1)]
 
+# 크루스칼 알고리즘은 간선마다 가중치가 달라 간선을 저장해야 함
 edges = []
 for _ in range(int(input())):
     a, b, c = map(int, input().split())

@@ -3,6 +3,8 @@
 
 # https://www.acmicpc.net/board/view/79877
 
+# https://www.acmicpc.net/source/54560242
+
 '''
 
 
@@ -32,21 +34,16 @@ n = int(input())
 
 parent = [i for i in range(n + 1)]
 
-# 간선 정렬
-edges = []
 for _ in range(n - 2):
     a, b = map(int, input().split())
-    a, b = min(a, b), max(a, b)
-    edges.append((a, b))
-edges.sort(key=lambda x: (x[0], x[1]))
 
-print(edges)
+    # 사이클이 발생하지 않으면 집합 합침
+    if find_parent(a) != find_parent(b):
+        union(a, b)
 
-# 최소한 간선 개수만큼 적용하여 오류 없이 부모 관계 설정
-for _ in range(len(edges)):
-    for e in edges:
-        union(e[0], e[1])
-
+# 간선을 1번만 순회하면 부모가 제대로 설정되지 않는 오류 발생
+for i in range(1, n + 1):
+    find_parent(i)
 
 for i in range(1, n - 1 + 1):
     if parent[i] != parent[i + 1]:

@@ -1,0 +1,16 @@
+'''
+해당 문제
+
+백준
+20040
+
+'''
+
+# 간선 전체 순회
+for _ in range(m):
+    a, b = map(int, input().split())
+
+    # 사이클이 발견되지 않으면
+    # 집합을 합침
+    if find_parent(a) != find_parent(b):
+        union(a, b)

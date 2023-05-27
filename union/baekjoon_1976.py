@@ -46,11 +46,16 @@ for i in range(n):
         if graph[i][j] == 1:
             edges.append((i, j))
 
-# 최소한 간선 개수만큼 조회하여 오류 없이 집합 설정하기
-for _ in range(len(edges)):
-    for a, b in edges:
-        if find_parent(a) != find_parent(b):
-            union(a, b)
+
+# 간선을 1번만 순회
+for a, b in edges:
+    # 사이클이 발생하지 않으면 집합을 합침
+    if find_parent(a) != find_parent(b):
+        union(a, b)
+
+# 부모를 제대로 설정
+for i in range(0, n - 1 + 1):
+    find_parent(i)
 
 answer = [parent[p] for p in part]
 if len(set(answer)) == 1:
