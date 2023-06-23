@@ -1,0 +1,10 @@
+def count_different(a, b):
+    count = 0
+    for i in range(len(a)):
+        if a[i] != b[i]:
+            count += 1
+
+    return count
+
+    # 두 문자열에서 문자 중복이 없는 경우
+    # return len(set(a) - set(b))
