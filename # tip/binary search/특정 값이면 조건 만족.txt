@@ -3,6 +3,7 @@
 # li는 정렬되어 있다고 가정
 # 따라서 li의 구간도 정렬되어 있어 binary search 적용 가능
 
+# 찾는 원소가 1개만 존재하는 경우
 # bisect_left(배열, 찾는 값), bisect_right(배열, 찾는 값)과 동일
 
 # 구현
