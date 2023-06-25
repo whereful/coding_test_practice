@@ -1,0 +1,19 @@
+'''
+해당 문제
+
+백준
+13116
+
+'''
+
+# 자기 자신과 부모를 저장하는 리스트
+def find_parent(parent_list, n):
+
+    while True:
+        parent_list.append(n)
+
+        # 이진트리는 자신의 인덱스를 2로 나누면 부모의 인덱스가 도출된다
+        n = n // 2
+
+        if n == 0:
+            break
