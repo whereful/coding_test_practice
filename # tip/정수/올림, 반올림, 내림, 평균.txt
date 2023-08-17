@@ -1,0 +1,11 @@
+1. decimal 이용
+
+# https://m.blog.naver.com/youndok/222218536425
+
+from decimal import ROUND_HALF_UP, getcontext, Decimal
+getcontext().rounding = ROUND_HALF_UP
+
+# Decimal(str()).quantize(str('원하는 수 형태')) -> int() or float()로 묶기
+
+
+2. int(숫자 + 0.5)
