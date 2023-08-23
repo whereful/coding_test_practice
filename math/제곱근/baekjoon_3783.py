@@ -3,16 +3,18 @@
 # https://www.acmicpc.net/source/41904955
 # https://devlibrary00108.tistory.com/312
 
-from decimal import Decimal, getcontext
-getcontext().prec = 1000  # 천자리까지 정확도 주기
+# https://www.acmicpc.net/source/61471402
 
-for _ in range(int(input())):
+from decimal import *
+getcontext().prec = 400  # 천자리까지 정확도 주기
 
-    # Decimal 객체를 만듬.(float, int같은)
-    # decimal을 이용해서 정확한 세제곱근 구함, 구한 값을 500자리에서 반올림 실행
-    # 500 자리에서 실행한 이유는 여유있게 소수점을 만들기 위함
+for i in range(int(input())):
 
-    d = round((int(input()) ** (Decimal('1') / Decimal('3'))), 500)
+    # Decimal을 이용하여 계산
+    res = Decimal(str(Decimal(input()) ** (Decimal('1.0') / Decimal('3.0'))))
 
-    # 원하는 소수점 자리까지 표현
-    print(str(d)[0:str(d).find(".") + 11])
+    # 이 과정이 왜 필요한지는 모르겠으나 정확성을 부여하기 위해 실행
+    # 반올림하는 자리수는 prec보다 작아야 오류가 발생하지 않음
+    res = round(res, 300)
+
+    print(res.quantize(Decimal('0.0000000001'), rounding=ROUND_DOWN))
