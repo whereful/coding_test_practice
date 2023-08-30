@@ -1,11 +1,11 @@
 # X : 조건 만족하지 않음, O 조건 만족
-# X X X X X O O O O O ... 
+# X X X X X O O O O O ...
 
 # 해당 인덱스 전 : 특정 값 미만
 # 해당 인덱스 후 : 특정 값 이상
 
 # 이 때는 특정 값보다 같거나 이상이지만 가장 작은 값의 인덱스를 구함
-# X X X X X [O] O O O O ... 
+# X X X X X [O] O O O O ...
 
 '''
 해당 문제
@@ -41,8 +41,13 @@ def binary_search(start, end):
         # 특정 값보다 미만인 경우(조건 불만족)
         else:
             start = mid + 1
-        
+
     # 최종 결과를 반환함
     return result
-            
-    
+
+
+li = sorted(map(int, input().split()))
+target = int(input())
+
+n = len(li)
+print(binary_search(0, n - 1))

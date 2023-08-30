@@ -1,12 +1,7 @@
-# 전형적인 binary search
-
-# li는 정렬되어 있다고 가정
-# 따라서 li의 구간도 정렬되어 있어 binary search 적용 가능
-
 # 찾는 원소가 1개만 존재하는 경우
 # bisect_left(배열, 찾는 값), bisect_right(배열, 찾는 값)과 동일
 
-# 구현
+
 # start, end는 배열의 처음과 끝 인덱스를 저장
 def binary_search(start, end):
 
@@ -15,22 +10,25 @@ def binary_search(start, end):
 
         # 조건을 설정할 때 필요한 값 정의
 
-        # 특정 값이 아니고 작은 경우
+        # 특정 값보다 작은 경우
         # 최소 지점을 높임
         if ():
             start = mid + 1
 
-        # 특정 값이 아니고 큰 경우
+        # 특정 값보다 큰 경우
         # 최대 지점을 낮춤
         elif ():
             end = mid - 1
 
-        # 조건을 만족했으면 더 이상 볼 필요가 없음   
+        # 조건을 만족했으면 더 이상 볼 필요가 없음
         else:
             return mid
 
     # 찾지 못하면 존재할 수 없는 인덱스 반환
     return -1
 
-            
-    
+
+li = sorted(map(int, input().split()))
+n = len(li)
+
+print(binary_search(0, n - 1))

@@ -1,3 +1,4 @@
+'''
 binary search 전제
 
 1. 배열이 정렬되어 있어야 한다
@@ -9,12 +10,6 @@ binary search 특징
 (정렬되지 않은 배열 : arr, 추출한 배열 : li)
 
 2. bisect_left, bisect_right로 정의 가능
-# https://heytech.tistory.com/79
-
-bisect_left(배열, 값) = 값보다 같거나 이상이지만 가장 작은 값이 있는 인덱스
-
-bisect_right(배열, 값) = 값보다 같거나 이하이지만 가장 큰 값이 있는 인덱스 + 1
-
-bisect_right(배열, b) - bisect_left(배열, a) = a 이상 b 이하인 배열 원소 개수
 
 3. 배열을 선언하지 않아도 시작과 끝이 정해져 있고 그 사이에 모든 값들이 존재하는 경우도 존재한다
+'''
