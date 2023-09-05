@@ -17,19 +17,21 @@ for i in range(n):  # 오른쪽 포인터 : i
 
     # 문제에서 같은 경우만 고려하므로 같은 경우에 대한 코드 작성
     if temp == s:
+        print(start, i)
         ans += 1
 
     # 큰 경우
     if temp > s:
 
         # 큰 경우
-        while temp > s:
+        while temp > s and i > start:
             temp -= arr[start]
             start += 1
 
         # 작거나 같은 경우
         # 문제에서 같은 경우만 고려하므로 같은 경우에 대한 코드 작성
         if temp == s:
+            print(start, i)
             ans += 1
 
 print(ans)

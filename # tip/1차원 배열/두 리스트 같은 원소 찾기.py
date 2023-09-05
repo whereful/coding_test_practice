@@ -8,4 +8,4 @@
 
 # https://calssess.tistory.com/91
 
-set(parent_a) & set(parent_b))
+# set(parent_a) & set(parent_b))

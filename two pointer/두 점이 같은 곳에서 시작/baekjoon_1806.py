@@ -18,7 +18,7 @@ for i in range(n):
 
     # 큰 경우
     if temp > s:
-        while temp > s:
+        while temp > s and i > start:
             # 문제에서 크거나 같은 경우를 따지므로 큰 경우에 대한 코드 작성
             ans = min(ans, i - start + 1)
             temp -= arr[start]

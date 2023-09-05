@@ -36,14 +36,14 @@ for i in range(n):  # 오른쪽 포인터 : i
     # 큰 경우
     if temp > s:
 
-        # 큰 경우 조회
-        while temp > s:
+        # 큰 경우이고 오른쪽 포인터가 앞에 있을 때까지 조회
+        while temp > s and i > start:
             # 조건 만족시 코드 작성
             # 문제마다 다른 코드
             temp -= arr[start]
             start += 1
 
-        # 작거나 같은 경우
+        # 작거나 같은 경우, 포인터가 겹치는 경우
         # 문제마다 다른 코드 작성
 
 print(ans)

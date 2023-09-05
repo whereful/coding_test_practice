@@ -28,7 +28,7 @@ def two_pointer():
 
         # 큰 경우
         if li[i] - li[start] > m:
-            while li[i] - li[start] > m:
+            while li[i] - li[start] > m and i > start:
                 # 문제에서 크거나 같은 경우에 대해 고려하므로 큰 경우에 대한 코드 작성
                 res = min(res, li[i] - li[start])
                 start += 1
