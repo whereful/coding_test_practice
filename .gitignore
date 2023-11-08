@@ -3,3 +3,5 @@
 # 파일명, 확장자 입력 전부 가능
 
 .DS_Store
+
+[not git upload]/
