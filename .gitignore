@@ -4,4 +4,4 @@
 
 .DS_Store
 
-[not git upload]/
+[not git upload]/*
